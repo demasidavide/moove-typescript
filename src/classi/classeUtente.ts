@@ -23,5 +23,6 @@ export class cliente implements IUtente {
     console.log(`Utente ${this.nome} ha prenotato ${mezzo.tipo}`);
   }  
   aggiungiUtente(nome:string, cognome:string, email:string, metodoPagamento:string):void{
+    new cliente(this.nome=nome,this.cognome = cognome,this.email = email,this.metodoPagamento = metodoPagamento)
   }
 }
