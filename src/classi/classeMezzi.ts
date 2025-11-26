@@ -10,7 +10,7 @@ export class bicicletta implements IMezzo {
   constructor(tipo: string, idMezzo: number, stato: boolean) {
     this.idMezzo = idMezzo;
     this.tipo = tipo;
-    this.stato = true;
+    this.stato = stato;
     this.numPasseggeri = 1;
   }
   assegnaUtente(utente: IUtente): void {
@@ -27,7 +27,7 @@ export class monopattino implements IMezzo {
   constructor(tipo: string, idMezzo: number, stato: boolean) {
     this.idMezzo = idMezzo;
     this.tipo = tipo;
-    this.stato = true;
+    this.stato = stato;
     this.numPasseggeri = 1;
   }
   assegnaUtente(utente: IUtente): void {
@@ -44,7 +44,7 @@ export class scooter implements IMezzo {
   constructor(tipo: string, idMezzo: number, stato: boolean) {
     this.idMezzo = idMezzo;
     this.tipo = tipo;
-    this.stato = true;
+    this.stato = stato;
     this.numPasseggeri = 2;
   }
   assegnaUtente(utente: IUtente): void {

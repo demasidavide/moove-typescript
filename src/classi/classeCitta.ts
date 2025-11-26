@@ -11,6 +11,7 @@ export class cittaDisponibile implements ICitta {
     this.mezziDisponibili = mezziDisponibili;
   }
 
+
   aggiungiMezzo(mezzo: IMezzo): void {
     let newMezzo;
     if (mezzo.tipo === "bicicletta") {
