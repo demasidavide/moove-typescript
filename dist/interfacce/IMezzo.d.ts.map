@@ -1,0 +1,1 @@
+{"version":3,"file":"IMezzo.d.ts","sourceRoot":"","sources":["../../src/interfacce/IMezzo.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,OAAO,EAAE,MAAM,cAAc,CAAC;AAE5C,MAAM,WAAW,MAAM;IACrB,IAAI,EAAC,MAAM,CAAC;IACZ,OAAO,EAAE,MAAM,CAAC;IAChB,KAAK,EAAE,OAAO,CAAC;IACf,aAAa,EAAE,MAAM,CAAC;IAEtB,aAAa,CAAC,MAAM,EAAC,OAAO,GAAE,IAAI,CAAC;CACpC"}

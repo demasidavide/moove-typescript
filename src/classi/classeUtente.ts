@@ -20,6 +20,8 @@ export class cliente implements IUtente {
   }
 
   prenotaMezzo(mezzo: IMezzo): void {
-    console.log(`Utente ${this.nome} ha prenotato ${mezzo.tipo}`);    
+    console.log(`Utente ${this.nome} ha prenotato ${mezzo.tipo}`);
+  }  
+  aggiungiUtente(nome:string, cognome:string, email:string, metodoPagamento:string):void{
   }
 }

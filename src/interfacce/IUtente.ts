@@ -7,4 +7,5 @@ export interface IUtente {
   metodoPagamento: string;
 
   prenotaMezzo(mezzo: IMezzo): void;
+  aggiungiUtente(nome:string,cognome:string,email:string,metodoPagamento:string):void;
 }
