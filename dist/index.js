@@ -15,8 +15,9 @@ stampaLista();
 //creazione utente
 const utente = new cliente('Milo', 'Bruno', 'milobruno@gmail.x', 'paypal');
 //utente prende un mezzo
-utente.prenotaMezzo(bici2);
-console.log(` il mezzo ${bici2.tipo} ora è ${bici2.disponibilita}`);
+//utente.prenotaMezzo(bici2)
+bici2.assegnaUtente(utente);
+//console.log(` il mezzo ${bici2.tipo} ora è ${bici2.disponibilita}`)
 stampaLista();
 //stampa lista mezzi disponibili per test
 function stampaLista() {

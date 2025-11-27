@@ -31,9 +31,8 @@ export class mezzo implements IMezzo {
      this.disponibilita = nuovoStato ? "disponibile" : "Non disponibile";
     }
 
-
-
   assegnaUtente(utente: IUtente): void {
-    console.log(`this.tipo è assegnato a ${utente}`);
+        utente.prenotaMezzo(this)
+        console.log(`Il mezzo ${this.tipo} è stato assegnato a ${utente.nome} ${utente.cognome}`)
   }
 }

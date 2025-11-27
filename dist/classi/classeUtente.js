@@ -7,7 +7,6 @@ export class cliente {
     }
     prenotaMezzo(mezzo) {
         mezzo.statoLetto = false;
-        console.log(`Utente ${this.nome} ha prenotato ${mezzo.tipo}`);
     }
 }
 //# sourceMappingURL=classeUtente.js.map

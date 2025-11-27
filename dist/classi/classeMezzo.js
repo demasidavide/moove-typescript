@@ -20,7 +20,8 @@ export class mezzo {
         this.disponibilita = nuovoStato ? "disponibile" : "Non disponibile";
     }
     assegnaUtente(utente) {
-        console.log(`this.tipo è assegnato a ${utente}`);
+        utente.prenotaMezzo(this);
+        console.log(`Il mezzo ${this.tipo} è stato assegnato a ${utente.nome} ${utente.cognome}`);
     }
 }
 //# sourceMappingURL=classeMezzo.js.map
