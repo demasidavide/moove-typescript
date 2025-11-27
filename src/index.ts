@@ -4,17 +4,38 @@ import { bicicletta, monopattino, scooter } from "./classi/classeMezzi.js";
 import { cliente } from "./classi/classeUtente.js";
 import type { IMezzo } from "./interfacce/IMezzo.js";
 import type { IUtente } from "./interfacce/IUtente.js";
+import type { ICitta } from "./interfacce/ICitta.js";
+
 
 //creazione mezzi
-const bici1 = new bicicletta("mountain-bike", 1, true);
-const bici2 = new bicicletta("mountain-bike", 2, false);
-const moto1 = new scooter("booster", 3, false);
-const moto2 = new scooter("cagiva", 4, true);
+const bici1 = new bicicletta("mountain-bike");
+const bici2 = new bicicletta("mountain-bike");
+const moto1 = new scooter("booster");
+const moto2 = new scooter("cagiva");
 //creazione citta
 let mezziDisponibili: IMezzo[] = [];
 const citta1 = new cittaDisponibile("biella", [bici1, bici2]);
 const citta2 = new cittaDisponibile("cossato", [moto1, moto2]);
+let cittaDisponibili : ICitta[] = [citta1,citta2];
+const listaCitta = cittaDisponibili.map(citta => citta.nome).join(', ');
+const listaMezzi = mezziDisponibili.map(mezzo => mezzo.tipo).join(', ');
 
+//funzione aggiungi mezzo con bottone simulato
+const addMezzo = document.getElementById('add-mezzi');
+if(addMezzo){
+    addMezzo.addEventListener('click',()=>{
+      let valoreCitta = prompt(`In quale città: ${listaCitta}`) ?? 'milano';
+      let valoreTipo = prompt(`scegli un mezzo da inserire: ${listaMezzi} `) ?? bicicletta
+    citta1.aggiungiMezzo(valoreCitta,valoreTipo);
+    mezziDisponibili.push()
+    console.log(valoreTipo ,'aggiunta in ',valoreCitta)
+})
+}else{
+    console.error('problema come sempre');
+}
+
+
+//stampa elementi disponibili o no
 citta1.mezziDisponibili.forEach((element) => {
   if (element.stato) {
     console.log(

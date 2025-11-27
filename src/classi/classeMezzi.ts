@@ -1,16 +1,24 @@
 import type { IMezzo } from "../interfacce/IMezzo.ts";
 import type { IUtente } from "../interfacce/IUtente.ts";
 
+let ultimoId =0;
+
+export function generaId(): number{
+    ultimoId ++;
+    return ultimoId;
+}
+
 export class bicicletta implements IMezzo {
+  static ultimoId : number=0
   tipo: string;
   idMezzo: number;
   stato: boolean;
   numPasseggeri: number;
 
-  constructor(tipo: string, idMezzo: number, stato: boolean) {
-    this.idMezzo = idMezzo;
+  constructor(tipo: string) {
+    this.idMezzo = generaId();
     this.tipo = tipo;
-    this.stato = stato;
+    this.stato = true;
     this.numPasseggeri = 1;
   }
   assegnaUtente(utente: IUtente): void {
@@ -24,10 +32,10 @@ export class monopattino implements IMezzo {
   stato: boolean;
   numPasseggeri: number;
 
-  constructor(tipo: string, idMezzo: number, stato: boolean) {
-    this.idMezzo = idMezzo;
+  constructor(tipo: string) {
+    this.idMezzo = generaId();
     this.tipo = tipo;
-    this.stato = stato;
+    this.stato = true;
     this.numPasseggeri = 1;
   }
   assegnaUtente(utente: IUtente): void {
@@ -41,10 +49,10 @@ export class scooter implements IMezzo {
   stato: boolean;
   numPasseggeri: number;
 
-  constructor(tipo: string, idMezzo: number, stato: boolean) {
-    this.idMezzo = idMezzo;
+  constructor(tipo: string) {
+    this.idMezzo = generaId();
     this.tipo = tipo;
-    this.stato = stato;
+    this.stato = true;
     this.numPasseggeri = 2;
   }
   assegnaUtente(utente: IUtente): void {

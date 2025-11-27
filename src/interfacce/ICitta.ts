@@ -4,5 +4,5 @@ export interface ICitta {
   nome: string;
   mezziDisponibili: IMezzo[];
   
-  aggiungiMezzo(mezzo: IMezzo): void;
+  aggiungiMezzo(citta: string,mezzo: string): void;
 }
