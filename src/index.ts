@@ -1,84 +1,95 @@
 //importo tutte le classi
-import { cittaDisponibile } from "./classi/classeCitta.js";
-import { bicicletta, monopattino, scooter } from "./classi/classeMezzi.js";
+import { cittaServita } from "./classi/classeCitta.js";
+import { mezzo } from "./classi/classeMezzo.js";
 import { cliente } from "./classi/classeUtente.js";
 import type { IMezzo } from "./interfacce/IMezzo.js";
 import type { IUtente } from "./interfacce/IUtente.js";
 import type { ICitta } from "./interfacce/ICitta.js";
 
-
 //creazione mezzi
-const bici1 = new bicicletta("mountain-bike");
-const bici2 = new bicicletta("mountain-bike");
-const moto1 = new scooter("booster");
-const moto2 = new scooter("cagiva");
-//creazione citta
+const bici1 = new mezzo("mountain-bike");
+const bici2 = new mezzo("mountain-bike");
+const moto1 = new mezzo("booster");
+const moto2 = new mezzo("cagiva");
 let mezziDisponibili: IMezzo[] = [];
-const citta1 = new cittaDisponibile("biella", [bici1, bici2]);
-const citta2 = new cittaDisponibile("cossato", [moto1, moto2]);
-let cittaDisponibili : ICitta[] = [citta1,citta2];
-const listaCitta = cittaDisponibili.map(citta => citta.nome).join(', ');
-const listaMezzi = mezziDisponibili.map(mezzo => mezzo.tipo).join(', ');
+//creazione citta
+const citta = new cittaServita([bici1, bici2,moto2]);//biella
+console.log(citta);
+
+
+
+
+
+
+
+
+
+
+
+//const citta2 = new cittaDisponibile("cossato", [moto1, moto2]);
+//let cittaDisponibili: ICitta[] = [citta1, citta2];
+
+// const listaCitta = cittaDisponibili.map(citta => citta.nome).join(', ');
+// const listaMezzi = mezziDisponibili.map(mezzo => mezzo.tipo).join(', ');
 
 //funzione aggiungi mezzo con bottone simulato
-const addMezzo = document.getElementById('add-mezzi');
-if(addMezzo){
-    addMezzo.addEventListener('click',()=>{
-      let valoreCitta = prompt(`In quale città: ${listaCitta}`) ?? 'milano';
-      let valoreTipo = prompt(`scegli un mezzo da inserire: ${listaMezzi} `) ?? bicicletta
-    citta1.aggiungiMezzo(valoreCitta,valoreTipo);
-    mezziDisponibili.push()
-    console.log(valoreTipo ,'aggiunta in ',valoreCitta)
-})
-}else{
-    console.error('problema come sempre');
-}
-
+// const addMezzo = document.getElementById('add-mezzi');
+// if(addMezzo){
+//     addMezzo.addEventListener('click',()=>{
+//       let valoreCitta = prompt(`In quale città: ${listaCitta}`) ?? 'milano';
+//       let valoreTipo = prompt(`scegli un mezzo da inserire: ${listaMezzi} `) ?? bicicletta
+//     citta1.aggiungiMezzo(valoreCitta,valoreTipo);
+//     mezziDisponibili.push()
+//     console.log(valoreTipo ,'aggiunta in ',valoreCitta)
+// })
+// }else{
+//     console.error('problema come sempre');
+// }
 
 //stampa elementi disponibili o no
-citta1.mezziDisponibili.forEach((element) => {
-  if (element.stato) {
-    console.log(
-      citta1.nome,
-      "mezzo disponibile",
-      element.tipo,
-      element.idMezzo
-    );
-  } else {
-    console.log(
-      citta1.nome,
-      "mezzo NON disponibile",
-      element.tipo,
-      element.idMezzo
-    );
-  }
-});
-citta2.mezziDisponibili.forEach((element) => {
-  if (element.stato) {
-    console.log(
-      citta2.nome,
-      "mezzo disponibile",
-      element.tipo,
-      element.idMezzo
-    );
-  } else {
-    console.log(
-      citta2.nome,
-      "mezzo NON disponibile",
-      element.tipo,
-      element.idMezzo
-    );
-  }
-});
+// citta1.mezziDisponibili.forEach((element) => {
+//   if (element.stato) {
+//     console.log(
+//       citta1.nome,
+//       "mezzo disponibile",
+//       element.tipo,
+//       element.idMezzo
+//     );
+//   } else {
+//     console.log(
+//       citta1.nome,
+//       "mezzo NON disponibile",
+//       element.tipo,
+//       element.idMezzo
+//     );
+//   }
+// });
+// citta2.mezziDisponibili.forEach((element) => {
+//   if (element.stato) {
+//     console.log(
+//       citta2.nome,
+//       "mezzo disponibile",
+//       element.tipo,
+//       element.idMezzo
+//     );
+//   } else {
+//     console.log(
+//       citta2.nome,
+//       "mezzo NON disponibile",
+//       element.tipo,
+//       element.idMezzo
+//     );
+//   }
+// });
 
 //creazione utenti
-const utente1 = new cliente(
-  "mario",
-  "rossi",
-  "mariorossi@gmail.x",
-  "googlepay"
-);
-const utente2 = new cliente("milo", "bruno", "milobruno@gmail.x", "paypal");
+// const utente1 = new cliente(
+//   "mario",
+//   "rossi",
+//   "mariorossi@gmail.x",
+//   "googlepay"
+// );
+// const utente2 = new cliente("milo", "bruno", "milobruno@gmail.x", "paypal");
 
 //inserisco un utente in array utenti
 // let utenti : cliente[]=[];

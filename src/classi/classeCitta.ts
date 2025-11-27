@@ -1,20 +1,17 @@
 import type { ICitta } from "../interfacce/ICitta.ts";
 import type { IMezzo } from "../interfacce/IMezzo.ts";
-import { bicicletta, monopattino, scooter } from "./classeMezzi.js";
+import { bicicletta, monopattino, scooter } from "./classeMezzo.js";
 
-
-
-export class cittaDisponibile implements ICitta {
-  nome: string;
+export class cittaServita implements ICitta {
+  nome:string;
   mezziDisponibili: IMezzo[];
 
-  constructor(nome: string, mezziDisponibili: IMezzo[]) {
-    this.nome = nome;
+  constructor(mezziDisponibili: IMezzo[]) {
+    this.nome = 'Biella';
     this.mezziDisponibili = mezziDisponibili;
   }
 
-
-  aggiungiMezzo(citta:string ,mezzo: IMezzo): void {
+  aggiungiMezzo(mezzo: IMezzo): void {
     let newMezzo;
     if (mezzo.tipo === "bicicletta") {
       newMezzo = new bicicletta(mezzo.tipo);
