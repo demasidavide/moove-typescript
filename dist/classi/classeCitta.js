@@ -5,25 +5,8 @@ export class cittaServita {
         this.mezziDisponibili = mezziDisponibili;
     }
     aggiungiMezzo(mezzo) {
-        // let newMezzo;
-        // if (mezzo.tipo === "bicicletta") {
-        //   newMezzo = new bicicletta(mezzo.tipo);
-        //   this.mezziDisponibili.push(newMezzo);
-        //   console.log("mezzo inserito:bicicletta");
-        //   console.log(this.mezziDisponibili);
-        // }
-        // if (mezzo.tipo === "monopattino") {
-        //   newMezzo = new monopattino(mezzo.tipo);
-        //   this.mezziDisponibili.push(newMezzo);
-        //   console.log("mezzo inserito:monopattino");
-        //   console.log(this.mezziDisponibili);
-        // }
-        // if (mezzo.tipo === "scooter") {
-        //   newMezzo = new scooter(mezzo.tipo);
-        //   this.mezziDisponibili.push(newMezzo);
-        //   console.log("mezzo inserito:scooter");
-        //   console.log(this.mezziDisponibili);
-        // }
+        this.mezziDisponibili.push(mezzo);
+        console.log(`Il mezzo ${mezzo.tipo} è stato aggiunto alla città ${this.nome}`);
     }
 }
 //# sourceMappingURL=classeCitta.js.map
