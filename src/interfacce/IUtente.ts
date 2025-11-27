@@ -6,5 +6,8 @@ export interface IUtente {
   email: string;
   metodoPagamento: string;
 
-  prenotaMezzo(mezzo: IMezzo): void;
+  prenotaMezzo(mezzo: IMezzo): void{
+    
+  }
+
 }

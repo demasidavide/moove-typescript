@@ -6,6 +6,7 @@ export class cliente {
         this.metodoPagamento = metodoPagamento;
     }
     prenotaMezzo(mezzo) {
+        mezzo.statoLetto = false;
         console.log(`Utente ${this.nome} ha prenotato ${mezzo.tipo}`);
     }
 }

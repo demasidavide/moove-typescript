@@ -4,13 +4,29 @@ import { mezzo } from "./classi/classeMezzo.js";
 import { cliente } from "./classi/classeUtente.js";
 //creazione mezzi
 const bici1 = new mezzo("mountain-bike");
-const bici2 = new mezzo("mountain-bike");
+const bici2 = new mezzo("bici-graziella");
 const moto1 = new mezzo("booster");
 const moto2 = new mezzo("cagiva");
-let mezziDisponibili = [];
+const listaMezzi = [bici1, bici2, moto1, moto2];
 //creazione citta
 const citta = new cittaServita([bici1, bici2, moto2]); //biella
-console.log(citta);
+console.log(`La città selezionata è: ${citta.nome}`);
+stampaLista();
+//creazione utente
+const utente = new cliente('Milo', 'Bruno', 'milobruno@gmail.x', 'paypal');
+//utente prende un mezzo
+utente.prenotaMezzo(bici2);
+console.log(` il mezzo ${bici2.tipo} ora è ${bici2.disponibilita}`);
+stampaLista();
+//stampa lista mezzi disponibili per test
+function stampaLista() {
+    console.log('I mezzi disponibili sono:');
+    listaMezzi.forEach(mezzo => {
+        if (mezzo.stato) {
+            console.log(mezzo.tipo, mezzo.idMezzo);
+        }
+    });
+}
 //const citta2 = new cittaDisponibile("cossato", [moto1, moto2]);
 //let cittaDisponibili: ICitta[] = [citta1, citta2];
 // const listaCitta = cittaDisponibili.map(citta => citta.nome).join(', ');
