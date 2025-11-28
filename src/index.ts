@@ -24,28 +24,30 @@ const biella = new cittaServita('Biella',[bici1]);//biella
 stampaLista(biella)
 stampaLista(milano)
 
-//aggiungo manualmente 2mezzi
+//aggiungo tramite funzione due mezzi
 biella.aggiungiMezzo(bici2)
-
-console.log('ciaooooooooo')
-console.log(bici2.cittaAssegnata)
 biella.aggiungiMezzo(scooter2)
 
 //aggiungo due volte lo stesso mezzo in città diverse per testare il controllo errore
-milano.aggiungiMezzo(bici2)
+milano.aggiungiMezzo(bici2)//elemento non salvato perche gia assegnato a riga28
 
+//visualizzo lista mezzi aggiornata
 stampaLista(biella)
 stampaLista(milano)
-//utente prende un mezzo
+
+//utenti diversi prendono un mezzo
 addAssegna(bici1,utente2,biella)
 addAssegna(bici2,utente3,biella)
+
 //assegno mezzo gia assegnato per vedere errore
-addAssegna(bici1,utente1,biella)
+addAssegna(bici1,utente1,biella)//impossibile assegnare perche gia assegnato a riga39
+
+//assegno ultimo mezzo presente nella città Milano e aggiorno lista per visualizzare "Nessun mezzo"
 addAssegna(monopattino1,utente2,milano)
 stampaLista(biella)
-stampaLista(milano)
+stampaLista(milano)//verrà visualizzato "Nessun mezzo disponibile"
 
-//stampa lista mezzi disponibili e controllo mezzi disponibili
+//funzione stampa lista mezzi disponibili e controllo mezzi disponibili
 function stampaLista(nomeCitta:ICitta){
   if(nomeCitta.mezziDisponibili.every(mezzo=>mezzo.stato === false)){
     console.log(`Nessun mezzo disponibile a ${nomeCitta.nome}`)
@@ -57,12 +59,15 @@ function stampaLista(nomeCitta:ICitta){
   }
 })};
 }
-//function per aggregare i dati da stampare e controllo errori
+
+//function per aggregare i dati da stampare e controllo errori assegnazione
 function addAssegna(nomeMezzo:IMezzo,nomeUtente:IUtente,nomeCitta:ICitta){
+  //controllo per vedere se assegnazione di un mezzo è gia avvenuta
   if(nomeMezzo.stato === false){
     console.log(`ATTENZIONE ${nomeUtente.nome} ${nomeUtente.cognome} il mezzo ${nomeMezzo.tipo} con ID: ${nomeMezzo.idMezzo} nella città di ${nomeCitta.nome} gia assegnato e non disponibile`)
     return;
   }
+  //altrimenti assegno il mezzo a utente e città
   nomeMezzo.assegnaUtente(nomeUtente);
   console.log(`Il mezzo ${nomeMezzo.tipo} con ID: ${nomeMezzo.idMezzo} è stato assegnato a ${nomeUtente.nome} ${nomeUtente.cognome} nella citta di ${nomeCitta.nome}`)
 }

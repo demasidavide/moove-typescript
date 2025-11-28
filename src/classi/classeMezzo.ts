@@ -2,7 +2,7 @@ import type { ICitta } from "../interfacce/ICitta.js";
 import type { IMezzo } from "../interfacce/IMezzo.js";
 import type { IUtente } from "../interfacce/IUtente.js";
 
-//funzione per id autoincrement-----------
+//funzione per id autoincrement univoco-----------
 let ultimoId = 0;
 export function generaId(): number {
   ultimoId++;
@@ -15,7 +15,7 @@ export class mezzo implements IMezzo {
   idMezzo: number;
   stato: boolean;
   disponibilita: string;
-  cittaAssegnata?: ICitta;
+  cittaAssegnata?: ICitta;//aggiunta per assegnare città a mezzo ed evitare assegnazioni doppie
 
   constructor(tipo: string) {
     this.idMezzo = generaId();
@@ -34,7 +34,7 @@ export class mezzo implements IMezzo {
     }
 
   assegnaUtente(utente: IUtente): void {
+    //passa a classeUtente che setta a false il mezzo e lo toglie dai mezzi disponibili
         utente.prenotaMezzo(this)
-        //console.log(`Il mezzo ${this.tipo} è stato assegnato a ${utente.nome} ${utente.cognome}`)
   }
 }

@@ -6,6 +6,7 @@ export interface IMezzo {
   idMezzo: number;
   stato: boolean;
   statoLetto:boolean;
-  cittaAssegnata?: ICitta
+  cittaAssegnata?: ICitta//aggiunta per assegnare città a mezzo ed evitare assegnazioni doppie
+  
   assegnaUtente(utente:IUtente):void;
 }

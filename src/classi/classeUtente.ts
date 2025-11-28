@@ -20,6 +20,7 @@ export class cliente implements IUtente {
   }
 
   prenotaMezzo(mezzo: IMezzo): void {
+    //assegna false per renderlo nonn piu disponibile
     mezzo.statoLetto = false;
   }  
 }

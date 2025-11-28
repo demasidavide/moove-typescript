@@ -12,12 +12,13 @@ export class cittaServita implements ICitta {
   }
 
   aggiungiMezzo(mezzo:IMezzo): void {
+    //controllo se il mezzo è gia stato assegnato e nel caso evito il salvataggio
     if(mezzo.cittaAssegnata){
       console.log(`ERRORE: il mezzo ${mezzo.tipo} con ID: ${mezzo.idMezzo} è gia stato assegnato alla città ${mezzo.cittaAssegnata.nome}`)
       return;
     }else{
     this.mezziDisponibili.push(mezzo);
     mezzo.cittaAssegnata = this;
-    console.log(`Il mezzo ${mezzo.tipo} è stato aggiunto alla città ${this.nome}`)
+    console.log(`Il mezzo ${mezzo.tipo} con ID: ${mezzo.idMezzo} è stato aggiunto alla città ${this.nome}`)
   }}
 }

@@ -6,6 +6,7 @@ export class cliente {
         this.metodoPagamento = metodoPagamento;
     }
     prenotaMezzo(mezzo) {
+        //assegna false per renderlo nonn piu disponibile
         mezzo.statoLetto = false;
     }
 }

@@ -1,4 +1,4 @@
-//funzione per id autoincrement-----------
+//funzione per id autoincrement univoco-----------
 let ultimoId = 0;
 export function generaId() {
     ultimoId++;
@@ -20,8 +20,8 @@ export class mezzo {
         this.disponibilita = nuovoStato ? "disponibile" : "Non disponibile";
     }
     assegnaUtente(utente) {
+        //passa a classeUtente che setta a false il mezzo e lo toglie dai mezzi disponibili
         utente.prenotaMezzo(this);
-        //console.log(`Il mezzo ${this.tipo} è stato assegnato a ${utente.nome} ${utente.cognome}`)
     }
 }
 //# sourceMappingURL=classeMezzo.js.map
