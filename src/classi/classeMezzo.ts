@@ -1,3 +1,4 @@
+import type { ICitta } from "../interfacce/ICitta.js";
 import type { IMezzo } from "../interfacce/IMezzo.js";
 import type { IUtente } from "../interfacce/IUtente.js";
 
@@ -14,6 +15,7 @@ export class mezzo implements IMezzo {
   idMezzo: number;
   stato: boolean;
   disponibilita: string;
+  cittaAssegnata?: ICitta;
 
   constructor(tipo: string) {
     this.idMezzo = generaId();

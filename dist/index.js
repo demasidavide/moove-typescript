@@ -21,8 +21,11 @@ stampaLista(biella);
 stampaLista(milano);
 //aggiungo manualmente 2mezzi
 biella.aggiungiMezzo(bici2);
-milano.aggiungiMezzo(bici2);
+console.log('ciaooooooooo');
+console.log(bici2.cittaAssegnata);
 biella.aggiungiMezzo(scooter2);
+//aggiungo due volte lo stesso mezzo in città diverse per testare il controllo errore
+milano.aggiungiMezzo(bici2);
 stampaLista(biella);
 stampaLista(milano);
 //utente prende un mezzo
