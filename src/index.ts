@@ -25,17 +25,20 @@ stampaLista(biella)
 stampaLista(milano)
 //aggiungo manualmente 2mezzi
 biella.aggiungiMezzo(bici2)
+milano.aggiungiMezzo(bici2)
 biella.aggiungiMezzo(scooter2)
 stampaLista(biella)
 stampaLista(milano)
 //utente prende un mezzo
 addAssegna(bici1,utente2,biella)
-// addAssegna(monopattino1,utente2,milano)
-// stampaLista(biella)
-// stampaLista(milano)
+addAssegna(bici2,utente3,biella)
+//assegno mezzo gia assegnato per vedere errore
+addAssegna(bici1,utente1,biella)
+addAssegna(monopattino1,utente2,milano)
+stampaLista(biella)
+stampaLista(milano)
 
-
-//stampa lista mezzi disponibili per test
+//stampa lista mezzi disponibili e controllo mezzi disponibili
 function stampaLista(nomeCitta:ICitta){
   if(nomeCitta.mezziDisponibili.every(mezzo=>mezzo.stato === false)){
     console.log(`Nessun mezzo disponibile a ${nomeCitta.nome}`)
@@ -47,10 +50,14 @@ function stampaLista(nomeCitta:ICitta){
   }
 })};
 }
-//function per aggregare i dati da stampare
+//function per aggregare i dati da stampare e controllo errori
 function addAssegna(nomeMezzo:IMezzo,nomeUtente:IUtente,nomeCitta:ICitta){
+  if(nomeMezzo.stato === false){
+    console.log(`ATTENZIONE ${nomeUtente.nome} ${nomeUtente.cognome} il mezzo ${nomeMezzo.tipo} con ID: ${nomeMezzo.idMezzo} nella città di ${nomeCitta.nome} gia assegnato e non disponibile`)
+    return;
+  }
   nomeMezzo.assegnaUtente(nomeUtente);
-  console.log(`Il mezzo ${nomeMezzo.tipo} è stato assegnato a ${nomeUtente.nome} ${nomeUtente.cognome} nella citta di ${nomeCitta.nome}`)
+  console.log(`Il mezzo ${nomeMezzo.tipo} con ID: ${nomeMezzo.idMezzo} è stato assegnato a ${nomeUtente.nome} ${nomeUtente.cognome} nella citta di ${nomeCitta.nome}`)
 }
 
 
