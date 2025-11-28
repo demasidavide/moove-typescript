@@ -3,7 +3,7 @@ import type { IMezzo } from "../interfacce/IMezzo.ts";
 export declare class cittaServita implements ICitta {
     nome: string;
     mezziDisponibili: IMezzo[];
-    constructor(mezziDisponibili: IMezzo[]);
+    constructor(nome: string, mezziDisponibili: IMezzo[]);
     aggiungiMezzo(mezzo: IMezzo): void;
 }
 //# sourceMappingURL=classeCitta.d.ts.map

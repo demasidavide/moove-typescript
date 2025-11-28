@@ -21,7 +21,7 @@ export class mezzo {
     }
     assegnaUtente(utente) {
         utente.prenotaMezzo(this);
-        console.log(`Il mezzo ${this.tipo} è stato assegnato a ${utente.nome} ${utente.cognome}`);
+        //console.log(`Il mezzo ${this.tipo} è stato assegnato a ${utente.nome} ${utente.cognome}`)
     }
 }
 //# sourceMappingURL=classeMezzo.js.map

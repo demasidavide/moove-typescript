@@ -3,40 +3,55 @@ import { cittaServita } from "./classi/classeCitta.js";
 import { mezzo } from "./classi/classeMezzo.js";
 import { cliente } from "./classi/classeUtente.js";
 import type { ICitta } from "./interfacce/ICitta.js";
+import type { IMezzo } from "./interfacce/IMezzo.js";
+import type { IUtente } from "./interfacce/IUtente.js";
 
 //creazione mezzi di partenza
 const bici1 = new mezzo("mountain-bike");
-//creazione utente
-const utente = new cliente('Milo','Bruno','milobruno@gmail.x','paypal')
+const bici2 = new mezzo("specialized");
+const scooter1 = new mezzo("yamaha");
+const scooter2 = new mezzo("honda");
+const monopattino1 = new mezzo("ducati")
+const monopattino2 = new mezzo("xiamoi")
+//creazione utenti
+const utente1 = new cliente('Milo','Bruno','milobruno@gmail.x','paypal')
+const utente2 = new cliente('Carlo','Rossi','carlorossi@gmail.x','visa')
+const utente3 = new cliente('Maria','Verdi','mariaverdi@gmail.x','googlepay')
 //creazione citta
-const biella = new cittaServita([bici1]);//biella
-console.log(`La città selezionata è: ${biella.nome}`);
-stampaLista()
+const milano = new cittaServita('Milano',[monopattino1]);
+const biella = new cittaServita('Biella',[bici1]);//biella
+//console.log(`La città selezionata per il servizio è: ${biella.nome}`);
+stampaLista(biella)
+stampaLista(milano)
 //aggiungo manualmente 2mezzi
-addMezzo('graziella',biella)
-addMezzo('monopattino',biella);
-addMezzo('scooter',biella)
-stampaLista()
+biella.aggiungiMezzo(bici2)
+biella.aggiungiMezzo(scooter2)
+stampaLista(biella)
+stampaLista(milano)
 //utente prende un mezzo
-bici1.assegnaUtente(utente)
-stampaLista()
+addAssegna(bici1,utente2,biella)
+// addAssegna(monopattino1,utente2,milano)
+// stampaLista(biella)
+// stampaLista(milano)
 
-//funzione per aggiungi mezzo
-function addMezzo(nome:string,cittadest:ICitta){
-  const nuovo = new mezzo(nome);
-  cittadest.aggiungiMezzo(nuovo,nome)
-}
 
 //stampa lista mezzi disponibili per test
-function stampaLista(){
-   console.log('I mezzi disponibili sono:')
-  biella.mezziDisponibili.forEach(mezzo=>{
+function stampaLista(nomeCitta:ICitta){
+  if(nomeCitta.mezziDisponibili.every(mezzo=>mezzo.stato === false)){
+    console.log(`Nessun mezzo disponibile a ${nomeCitta.nome}`)
+  }else{
+   console.log(`I mezzi disponibili a ${nomeCitta.nome} sono:`)
+  nomeCitta.mezziDisponibili.forEach(mezzo=>{
   if(mezzo.stato){
-    console.log(mezzo.tipo,mezzo.idMezzo)
+    console.log(mezzo.tipo, 'con ID:',mezzo.idMezzo)
   }
-});
+})};
 }
-
+//function per aggregare i dati da stampare
+function addAssegna(nomeMezzo:IMezzo,nomeUtente:IUtente,nomeCitta:ICitta){
+  nomeMezzo.assegnaUtente(nomeUtente);
+  console.log(`Il mezzo ${nomeMezzo.tipo} è stato assegnato a ${nomeUtente.nome} ${nomeUtente.cognome} nella citta di ${nomeCitta.nome}`)
+}
 
 
 

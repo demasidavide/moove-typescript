@@ -1,7 +1,7 @@
 import { mezzo } from "./classeMezzo.js";
 export class cittaServita {
-    constructor(mezziDisponibili) {
-        this.nome = 'Biella';
+    constructor(nome, mezziDisponibili) {
+        this.nome = nome;
         this.mezziDisponibili = mezziDisponibili;
     }
     aggiungiMezzo(mezzo) {

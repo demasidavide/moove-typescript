@@ -6,8 +6,8 @@ export class cittaServita implements ICitta {
   nome:string;
   mezziDisponibili: IMezzo[];
 
-  constructor(mezziDisponibili: IMezzo[]) {
-    this.nome = 'Biella';
+  constructor(nome:string,mezziDisponibili: IMezzo[]) {
+    this.nome = nome;
     this.mezziDisponibili = mezziDisponibili;
   }
 
