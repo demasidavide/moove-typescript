@@ -64,7 +64,7 @@ function stampaLista(nomeCitta:ICitta){
 function addAssegna(nomeMezzo:IMezzo,nomeUtente:IUtente,nomeCitta:ICitta){
   //controllo per vedere se assegnazione di un mezzo è gia avvenuta
   if(nomeMezzo.stato === false){
-    console.log(`ATTENZIONE ${nomeUtente.nome} ${nomeUtente.cognome} il mezzo ${nomeMezzo.tipo} con ID: ${nomeMezzo.idMezzo} nella città di ${nomeCitta.nome} gia assegnato e non disponibile`)
+    console.log(`ATTENZIONE ${nomeUtente.nome} ${nomeUtente.cognome} il mezzo ${nomeMezzo.tipo} con ID: ${nomeMezzo.idMezzo} nella città di ${nomeCitta.nome} è gia stato assegnato e non è più disponibile`)
     return;
   }
   //altrimenti assegno il mezzo a utente e città
