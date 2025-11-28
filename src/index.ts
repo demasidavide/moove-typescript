@@ -1,3 +1,13 @@
+//----------------------GUIDA------------------------
+//La pagina eseguirà le seguenti funzioni in ordine: 
+/** 1.Verra stampata la lista dei mezzi disponibili in due città Milano e Biella 
+    2.Verranno aggiunti due mezzi in città diverse. Ogni mezzo ha ID univoco autoincrement
+    3.Proverò ad assegnare lo stesso mezzo a due città diverse, generando messaggio di errore e non  salvataggio.
+    4.Assegno due mezzi a utenti diversi
+    5.Proverò ad assegnare lo stesso mezzo a due utenti generando messaggio errore e impossibilità di
+      prenotare il mezzo
+    6.Riepilogo lista mezzi disponibili. Milano visualizzerà "Nessun mezzo disponibile"*/
+
 //importo tutte le classi
 import { cittaServita } from "./classi/classeCitta.js";
 import { mezzo } from "./classi/classeMezzo.js";
@@ -18,9 +28,9 @@ const utente1 = new cliente('Milo','Bruno','milobruno@gmail.x','paypal')
 const utente2 = new cliente('Carlo','Rossi','carlorossi@gmail.x','visa')
 const utente3 = new cliente('Maria','Verdi','mariaverdi@gmail.x','googlepay')
 //creazione citta
-const milano = new cittaServita('Milano',[monopattino1]);
+const milano = new cittaServita('Milano',[monopattino1]);//milano
 const biella = new cittaServita('Biella',[bici1]);//biella
-//console.log(`La città selezionata per il servizio è: ${biella.nome}`);
+//stampo lista mezzi disponibili
 stampaLista(biella)
 stampaLista(milano)
 
